@@ -25,5 +25,6 @@ public class Hello extends HttpServlet {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(System.currentTimeMillis());
         writer.println("Date and Time:"+formatter.format(date));
+        resp.sendRedirect("index.jsp");
     }
 }

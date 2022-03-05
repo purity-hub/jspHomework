@@ -11,7 +11,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="register.jsp" name="register" onsubmit="validation()" method="post">
+    <form action="${pageContext.request.contextPath}/hello" name="register" onsubmit="return validation()" method="post">
         <input type="text" name="username" placeholder="Username"><br>
         <input type="password" name="password" placeholder="password"><br>
         <input type="email" name="email" placeholder="Email"><br>

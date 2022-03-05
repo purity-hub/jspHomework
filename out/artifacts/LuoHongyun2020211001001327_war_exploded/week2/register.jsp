@@ -12,7 +12,7 @@
 </head>
 <body>
     <form action="${pageContext.request.contextPath}/hello" name="register" onsubmit="return validation()" method="post">
-        <input type="text" name="username" placeholder="Username"><br>
+        <input type="text" name="username" placeholder="Username" onchange="changeusername()"><span id="span1"></span><br>
         <input type="password" name="password" placeholder="password"><br>
         <input type="email" name="email" placeholder="Email"><br>
         Gender<input type="radio" value="Male" name="gender">Male
@@ -25,6 +25,7 @@
             let username = document.forms["register"]["username"].value;
             if(username == null || username == ''){
                 alert("username must be required")
+                document.getElementById("span1").innerHTML="不能为空"
                 return false;
             }
             let password = document.forms["register"]["password"].value;
@@ -33,6 +34,10 @@
                 return false;
             }
         }
+        function changeusername(){
+            document.getElementById("span1").innerHTML=""
+        }
+
     </script>
 </body>
 </html>

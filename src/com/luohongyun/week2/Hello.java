@@ -19,12 +19,16 @@ public class Hello extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("gb2312");
+        String username = req.getParameter("username");
+        req.getSession().setAttribute("username",username);
         PrintWriter writer = resp.getWriter();
         writer.println("Name: LuoHongyun");
         writer.println("ID: 2020211001001327");
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(System.currentTimeMillis());
         writer.println("Date and Time:"+formatter.format(date));
-        resp.sendRedirect("index.jsp");
+        if(username != null){
+            resp.sendRedirect("index.jsp");
+        }
     }
 }

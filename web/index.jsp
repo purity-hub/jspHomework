@@ -9,6 +9,7 @@
 <html>
   <head>
     <title>hello</title>
+    <p><%=session.getAttribute("username")%></p>
   </head>
   <body>
     Hello

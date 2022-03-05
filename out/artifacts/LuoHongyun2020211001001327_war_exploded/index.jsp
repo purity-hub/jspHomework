@@ -11,8 +11,6 @@
     <title>hello</title>
   </head>
   <body>
-    <form action="/hello" method="post">
-
-    </form>
+    Hello
   </body>
 </html>

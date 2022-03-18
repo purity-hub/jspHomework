@@ -11,13 +11,13 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/hello" name="register" onsubmit="return validation()" method="post">
+    <form action="${pageContext.request.contextPath}/register" name="register" onsubmit="return validation()" method="post">
         <input type="text" name="username" placeholder="Username" onchange="changeusername()"><span id="span1"></span><br>
         <input type="password" name="password" placeholder="password"><br>
         <input type="email" name="email" placeholder="Email"><br>
-        Gender<input type="radio" value="Male" name="gender">Male
-        <input type="radio" value="Female" name="gender">Female<br>
-        <input type="date" placeholder="Date od Birth(yyyy-mm-dd)"><br>
+        Gender<input type="radio" value="1" name="gender">Male
+        <input type="radio" value="0" name="gender">Female<br>
+        <input type="date" placeholder="Date od Birth(yyyy-mm-dd)" name="date"><br>
         <input type="submit" value="提交">
     </form>
     <script>

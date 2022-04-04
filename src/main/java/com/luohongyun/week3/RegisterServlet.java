@@ -62,6 +62,7 @@ public class RegisterServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+/**week3--comment
         writer.println("<HTML>");
         writer.println("<HEAD><TITLE>UsingServlet</TITLE></HEAD>");
         writer.println("<BODY>");
@@ -115,5 +116,7 @@ public class RegisterServlet extends HttpServlet {
         writer.println("</table>");
         writer.println("</BODY>");
         writer.println("</HTML>");
+*/
+        resp.sendRedirect("login.jsp");
     }
 }

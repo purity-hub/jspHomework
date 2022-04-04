@@ -13,14 +13,15 @@ import java.sql.*;
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
-    public Connection connection = null;
+    public Connection connection = null;//week5
 
     @Override
     public void init() throws ServletException {
-        String driver = this.getServletContext().getInitParameter("driver");
-        String url = this.getServletContext().getInitParameter("url");
-        String username = this.getServletContext().getInitParameter("username");
-        String password = this.getServletContext().getInitParameter("password");
+        /**week5
+         *String driver = this.getServletContext().getInitParameter("driver");
+         *String url = this.getServletContext().getInitParameter("url");
+         *String username = this.getServletContext().getInitParameter("username");
+         *String password = this.getServletContext().getInitParameter("password");
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e) {
@@ -31,6 +32,8 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+         */
+        connection= (Connection) this.getServletContext().getAttribute("con");
     }
 
     @Override
@@ -45,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String sql = "select * from usertable where username = '" + username + "' and password = '" + password + "'";
-        System.out.println(username+password);
+        //System.out.println(username+password);
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
@@ -58,10 +61,21 @@ public class LoginServlet extends HttpServlet {
         }
         try {
             if(resultSet.next()){
-                writer.println("Login Success!!!");
-                writer.println("Welcome"+username);
+                //week5
+                //writer.println("Login Success!!!");
+                //writer.println("Welcome"+username);
+                req.setAttribute("id",resultSet.getInt("id"));
+                req.setAttribute("username",resultSet.getString("username"));
+                req.setAttribute("password",resultSet.getString("password"));
+                req.setAttribute("email",resultSet.getString("email"));
+                req.setAttribute("gender",resultSet.getInt("gender"));
+                req.setAttribute("birthday",resultSet.getDate("birthday"));
+                req.getRequestDispatcher("userInfo.jsp").forward(req,resp);
             }else{
-                writer.println("Username or Password Error!!!");
+                //week5
+                //writer.println("Username or Password Error!!!");
+                req.setAttribute("message","Username or Password Error!");
+                req.getRequestDispatcher("login.jsp").forward(req,resp);
             }
         } catch (SQLException e) {
             e.printStackTrace();

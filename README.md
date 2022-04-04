@@ -27,3 +27,12 @@ Name:LuoHongyun
 login:
 ![img_10.png](img/img_10.png)
 ![img_9.png](img/img_9.png)
+
+## week6:Result
+![img_11.png](img/img_11.png)
+![img_12.png](img/img_12.png)
+![img_13.png](img/img_13.png)
+- ERROR:
+  ![img_14.png](img/img_14.png)
+- SUCCESS
+  ![img_15.png](img/img_15.png)

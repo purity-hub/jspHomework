@@ -58,4 +58,7 @@
     <listener>
         <listener-class>com.luohongyun.week6.demo.JDBCServletContextListener</listener-class>
     </listener>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>

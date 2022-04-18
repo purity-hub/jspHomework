@@ -1,3 +1,4 @@
+<%@ page import="com.luohongyun.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
  <head>
@@ -33,10 +34,22 @@
    </td>
    </tr>
    <tr height="25"><td align="right"><font size="18" color="blue">
-   Welcome,<font size="18" color="red"> Guest</font>
+   Welcome,
+       <%
+           if(session.getAttribute("user")!=null){
+               User user = (User) session.getAttribute("user");
+               String username = user.getUsername();
+               out.println(username);
+           }else{
+       %>
+       <font size="18" color="red"> Guest</font>
+       <%
+           }%>
    </font></td> </tr>
   <tr height="20"><td align="right">
-   <br> <a href="#">Logout</a>
+      <%if(session.getAttribute("user")!=null){%>
+   <br> <a href="logout">Logout</a>
+      <%}%>
   <br><a href="#">My Cart</a><br/>
 <a href="register.jsp">Register Here</a>
   </td></tr>

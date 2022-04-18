@@ -4,13 +4,12 @@ import com.luohongyun.dao.UserDao;
 import com.luohongyun.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.Objects;
 
 @WebServlet(urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
@@ -53,7 +52,24 @@ public class LoginServlet extends HttpServlet {
         try {
             User user = userDao.findByUsernamePassword(connection, username, password);
             if(user != null){
-                req.setAttribute("user",user);//get user info in jsp page
+                if(Objects.equals(req.getParameter("rememberMe"),"1")){
+                    Cookie usernameCookie = new Cookie("cUsername", user.getUsername());
+                    Cookie passwordCookie = new Cookie("cPassword", user.getPassword());
+                    Cookie rememberMeCookie = new Cookie("rememberMeVal", req.getParameter("rememberMe"));
+                    //set age
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+                    //add cookies into response
+                    resp.addCookie(usernameCookie);
+                    resp.addCookie(passwordCookie);
+                    resp.addCookie(rememberMeCookie);
+                }
+                //create a session - week8
+                HttpSession session = req.getSession();
+                System.out.println("session id -->"+session.getId());
+                session.setAttribute("user",user);// set user in session
+                //req.setAttribute("user",user);//get user info in jsp page
                 req.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(req,resp);
             }else{
                 req.setAttribute("message","Username or Password Error!!!");

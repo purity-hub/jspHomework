@@ -34,7 +34,7 @@ if(!(request.getAttribute("message")==null)){
 <form name="login" method="post" action="login">
     Username:<input type="text" name="username" value="<%=username%>"><br/>
     Password:<input type="password" name="password" value="<%=password%>"><br/>
-    <input type="checkbox" name="rememberMe" value="1" <%=Objects.equals(rememberMeVal, "1") ? "checked":""%>>
+    RememberMe<input type="checkbox" name="rememberMe" value="1" <%=Objects.equals(rememberMeVal, "1") ? "checked":""%>><br/>
     <input type="submit" value="Login">
 </form>
 <%@include file="footer.jsp"%>

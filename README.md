@@ -49,6 +49,8 @@ RememberMe
 ![img_21.png](img/img_21.png)
 userinfo--ToUpdate
 ![img_22.png](img/img_22.png)
+updateUser.jsp
+![img_25.png](img/img_25.png)
 update
 ![img_23.png](img/img_23.png)
 datebase:

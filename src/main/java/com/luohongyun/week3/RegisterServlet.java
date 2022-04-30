@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req,resp);
+        req.getRequestDispatcher("WEB-INF/views/register.jsp").forward(req,resp);
     }
 
     @Override
@@ -117,6 +117,7 @@ public class RegisterServlet extends HttpServlet {
         writer.println("</BODY>");
         writer.println("</HTML>");
 */
-        resp.sendRedirect("login.jsp");
+        //resp.sendRedirect("login.jsp");
+        resp.sendRedirect("login");//loginServlet
     }
 }

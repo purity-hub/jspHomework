@@ -56,7 +56,7 @@ update
 datebase:
 ![img_24.png](img/img_24.png)
 
-# week9 Result
+## week9 Result
 - demo1
 ![img_26.png](img/img_26.png)
 - demo2
@@ -65,3 +65,12 @@ datebase:
 ![img_28.png](img/img_28.png)
 
 ![img_29.png](img/img_29.png)
+
+## week10 Result
+![img_30.png](img/img_30.png)
+- no login
+  ![img_31.png](img/img_31.png)
+- login not admin
+  ![img_32.png](img/img_32.png)
+- login by admin
+  ![img_33.png](img/img_33.png)

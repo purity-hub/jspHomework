@@ -26,5 +26,23 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 10.0.11" level="application_server_libraries" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.lhy:mysql-connector-java-8.0.28:8.0.28">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-8.0.28.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.lhy:servlet-api:2.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/servlet-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

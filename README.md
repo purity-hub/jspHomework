@@ -71,6 +71,10 @@ datebase:
 - no login
   ![img_31.png](img/img_31.png)
 - login not admin
-  ![img_32.png](img/img_32.png)
+  ![img_32.png](img/img_32.png)![img.png](img.png)
 - login by admin
   ![img_33.png](img/img_33.png)
+
+## week11 Result
+![img_34.png](img/img_34.png)
+![img_35.png](img/img_35.png)

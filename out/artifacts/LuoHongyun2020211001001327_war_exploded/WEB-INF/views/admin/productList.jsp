@@ -20,31 +20,31 @@
 						</div>
 					</div>
 		<div class="table-responsive col-sm-10">
-		<h2 class="title text-center">Product <strong>List</strong></h2> 
+		<h2 class="title text-center">Product <strong>List</strong></h2>
 					<table class="table table-condensed">
-					
+
 					<thead>
 					<tr class="cart_menu">
 							<td colspan="5">&nbsp;</td>
 							<td  colspan="1">  <a class="btn btn-default update" id="buttonSubmit" href="<%=basePath %>admin/addProduct">Add Product</a></td>
-							
+
 						</tr>
 						<tr class="cart_menu">
 							<td class="image"><strong>Item</strong></td>
 							<td class="description"></td>
 							<td class="price"><strong>Price</strong></td>
 							<td class="quantity"><strong>Category</strong></td>
-							
+
 							<td class="total"><strong>Description</strong></td>
 							<td></td>
-							
+
 						</tr>
 						</thead><tbody>
 					<!-- loop_start -->
-					
+
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="" 
+								<a href=""><img src=""
 								style="border: 1px solid #F7F7F0; height: 100px;width: 80px;"/></a>
 							</td>
 							<td class="cart_description">
@@ -54,9 +54,9 @@
 								<td class="cart_price">
 								<p>price</p>
 							</td>
-						
+
 							<td class="cart_quantity">CategoryID</td>
-							
+
 							<td class="cart_total">
 								<p class="cart_total_price"> productDescription</p>
 							</td>
@@ -67,18 +67,18 @@
 							<i class="fa fa-times">Delete</i></a>
 							</td>
 							</tr>
-							
+
 							<!-- loop_end -->
-							
+
 							<tr class="cart_menu">
 							<td colspan="5">&nbsp;</td>
-							<td  colspan="1">  <a class="btn btn-default update" id="buttonSubmit" href="<%=basePath %>admin/addProduct">Add Product</a></td>
-							
+							<td  colspan="1">  </td>
+
 						</tr>
 						</tbody>
 </table>
 		<ul class="pagination">
-		
+
 		<li><a href="">&laquo;</a></li>
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>

@@ -20,6 +20,20 @@
 <!--            <version>2.0</version>-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.lhy</groupId>
+            <artifactId>mysql-connector-java-8.0.28</artifactId>
+            <version>8.0.28</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/mysql-connector-java-8.0.28.jar</systemPath> <!--project.basedir是java内置变量，表示项目根目录-->
+        </dependency>
+        <dependency>
+            <groupId>com.lhy</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/servlet-api.jar</systemPath> <!--project.basedir是java内置变量，表示项目根目录-->
+        </dependency>
     </dependencies>
 
 </project>

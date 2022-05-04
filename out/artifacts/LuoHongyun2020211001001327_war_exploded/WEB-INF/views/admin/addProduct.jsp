@@ -3,7 +3,7 @@
 <%@include file="../header.jsp"%>
 
 <div id="contact-page" class="container">
-<div class="row">  	
+<div class="row">
 <div class="col-sm-2">
 						<div class="single-widget">
 							<h2>Modules</h2>
@@ -30,20 +30,26 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-											
-										<option value=""></option>
-										
+
+										<option value="1">FASHION</option>
+										<option value="2">HOUSEHOLD</option>
+										<option value="3">INTERIORS</option>
+										<option value="4">CLOTHING</option>
+										<option value="5">BAGS</option>
+										<option value="6">SHOES</option>
+										<option value="7">BIIKS</option>
+
 										<!-- loop_end -->
-										
+
 										</select>
 				            </div>
 				            <div class="form-group col-md-6">
 				                <input type="file" name="picture" class="form-control" required="required" placeholder="picture">
 				            </div>
-				         
+
 				            <div class="form-group col-md-12">
 				                <textarea name="productDescription" id="message"  class="form-control" cols="8" rows="8" placeholder="Product Description Here"></textarea>
-				            </div>                        
+				            </div>
 				            <div class="form-group col-md-12">
 				                <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
 				            </div>

@@ -57,4 +57,6 @@ public interface IProductDao {
 	 * @return List of product
 	 */
 	public List<Product> getPicture(Integer productId, Connection con) throws SQLException;
+
+	public byte[] getPictureById(Integer productId,Connection con) throws SQLException;
 }

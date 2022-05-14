@@ -80,7 +80,7 @@ public class Category {
     return list;
   }
 
-  public static String findByCategoryId(Connection con,int categoryId){
+  public static String findByCategoryId(Connection con, int categoryId){
     String categoryName = null;
     String queryString = "select CategoryName from Category where categoryId=?";
     try {

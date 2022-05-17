@@ -41,6 +41,7 @@
     <c:set target="${dog}" property="name" value="dog1" />
     <c:set target="${persion}" property="dog" value="${dog}" />
 
+
     Dog Name :<c:out value="${persion.dog.name}" />
 
     <h2> Use C:remove </h2>
@@ -55,7 +56,7 @@
     <c:out value="${requestScope.foo}" /><br>
     <c:out value="${sessionScope.foo}" /><br>
     <c:out value="${applicationScope.foo}" /><br>
-
+    
     <h3>C:catch</h3>
     <c:catch var="myException">
         <%=10/0%>

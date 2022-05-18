@@ -1,5 +1,7 @@
 jsp week2
 
+Run the environment: tomcat10
+
 ID:2020211001001327
 
 Name:LuoHongyun

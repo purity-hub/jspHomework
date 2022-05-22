@@ -51,10 +51,14 @@ public class UpdateUserServlet extends HttpServlet {
         UserDao userDao = new UserDao();
         try {
             //5. call updateUser() of userDao for update information
-            userDao.updateUser(connection,user);
+            int n = userDao.updateUser(connection,user);
+            User updatedUser = userDao.findById(connection, (int) id);
+            //userDao.updateUser(connection,user);
             //6. forword userinfo
-            session.setAttribute("user",user);
-            req.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(req,resp);
+            session.removeAttribute("user");
+            session.setAttribute("user",updatedUser);
+            //req.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(req,resp);
+            req.getRequestDispatcher("accountDetails").forward(req,resp);
         } catch (SQLException e) {
             e.printStackTrace();
         }

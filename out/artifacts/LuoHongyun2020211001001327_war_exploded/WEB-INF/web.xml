@@ -100,4 +100,12 @@
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>YourName</filter-name>
+        <filter-class>com.luohongyun.lab2.YourNameFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>YourName</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+    </filter-mapping>
 </web-app>

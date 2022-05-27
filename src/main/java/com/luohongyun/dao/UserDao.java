@@ -33,7 +33,11 @@ public class UserDao implements IUserDao{
 
     @Override
     public int deleteUser(Connection con, User user) throws SQLException {
-        return 0;
+        String sql = "delete from usertable where id = ?";
+        PreparedStatement preparedStatement = con.prepareStatement(sql);
+        preparedStatement.setInt(1, (int) user.getId());
+        int result = preparedStatement.executeUpdate();
+        return result;
     }
 
     @Override

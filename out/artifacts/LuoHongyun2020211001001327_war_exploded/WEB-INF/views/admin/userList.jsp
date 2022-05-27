@@ -1,6 +1,7 @@
 <%@include file="../header.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <section id="z`z`">
 		<div class="container">
 		<div class="breadcrumbs">
@@ -44,7 +45,8 @@
 					<sql:query var="allUser" dataSource="${myDs}">
 						select * from usertable;
 					</sql:query>
-						<c:forEach var="row" items="${allUser.rows}">
+					<c:set var="pagesize" value="8" scope="page" />
+						<c:forEach var="row" items="${allUser.rows}" begin="${param.start}" end="${param.start+pagesize}">
 						<tr>
 							<td class="cart_description">
 								<p>${row.username}</p>
@@ -71,13 +73,28 @@
 						<!-- loop_end -->
 		</tbody>
 		</table>
-		<ul class="pagination">
+			<c:set var="number" value="${allUser.rowCount}" scope="page" />
+			<fmt:formatNumber var="pagenumber" value="${(number+pagesize-1)/pagesize}" pattern="0" />
 
-		<li><a href="">&laquo;</a></li>
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">&raquo;</a></li>
+			<ul class="pagination">
+				<c:choose>
+					<c:when test="${param.start==0}">
+						<li class="disabled"><a href="#">&laquo;</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="<%=basePath%>admin/userList?start=${param.start-pagesize}">&laquo;</a></li>
+					</c:otherwise>
+						</c:choose>
+							<li><a href="">1</a></li>
+							<li><a href="">${pagenumber}</a></li>
+											<c:choose>
+								<c:when test="${param.start+pagesize>=number}">
+									<li class="disabled"><a href="#">&raquo;</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a href="<%=basePath%>admin/userList?start=${param.start+pagesize}">&raquo;</a></li>
+								</c:otherwise>
+											</c:choose>
 						</ul>
 		</div>
 		</div>

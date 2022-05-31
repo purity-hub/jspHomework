@@ -66,7 +66,7 @@ public class UserDao implements IUserDao{
         PreparedStatement preparedStatement = con.prepareStatement(sql);
         preparedStatement.setInt(1,id);
         ResultSet rs = preparedStatement.executeQuery();
-        User user=null;
+        User user = null;
         if(rs.next()){
             user=new User();
             user.setId(Long.parseLong(rs.getString("id")));

@@ -87,7 +87,7 @@
 							java.sql.Connection con=(java.sql.Connection)application.getAttribute("con");
 							com.luohongyun.dao.UserDao userDao=new com.luohongyun.dao.UserDao();
 							String customerName=userDao.findById(con, userId).getUsername();
-							 %>
+						%>
 						 <td><%=customerName %></td>
 						<td>
 						<p>${o.firstName} ${o.lastName}<p>
